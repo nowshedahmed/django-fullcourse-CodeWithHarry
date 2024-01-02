@@ -26,9 +26,9 @@ def analyze(request):
     
     
     if removepunc == "on":
-        
-        punctuations = '''.,?!:;'"()[]{}–—.../-&'''
+        punctuations = '''.,?!:;'"()[]{}-_./-&$#@^*%'''
         analyzevari = " "
+        
         for char in djtxt:
             if char not in punctuations:
                 analyzevari += char
