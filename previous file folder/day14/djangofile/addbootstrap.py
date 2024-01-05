@@ -1,18 +1,27 @@
-""" ==================================> adding more Features to textUtils Website <======================"""
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++> Adding Boostrap To Our Django Website | Python Django Tutorials In Hindi #14 < ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 from django.http import HttpResponse
+
 from django.shortcuts import render
 
 
 
 
 
-def index12(request):
-    return render(request,'indess.html')
 
 
 
-def analyze12(request):
+
+
+
+def index(request):
+    return render(request,"index.html")
+
+
+
+
+def analyze(request):
     inputtxt = request.GET.get('text','default')   # ei line ta output nibe
     
     #checkbox values
@@ -26,7 +35,7 @@ def analyze12(request):
     
     
     
-    congra = "->  Congratulations!  <-"
+    congra = " Congratulations! "
     
     if removepunc == "on":
         punctuations = '''.,?!:;'"()[]{}-_./-&$#@^*%'''
@@ -37,14 +46,14 @@ def analyze12(request):
                 analyzertxt1 = analyzertxt1 + elment
         
         allitemindics = {'Punctuations':'# Your Punctuations Analyzed text :',"analyzed_text1": analyzertxt1, 'cong':congra}
-        return render(request,'analyze12.html', allitemindics)
+        return render(request,'analyze.html', allitemindics)
                 
     elif fullcaps == "on":
         analyzertxt1 = ""  #> প্রথমে analyzertxt1 নামে একটি খালি স্ট্রিং তৈরি করা হয়।
         for elment in inputtxt:
             analyzertxt1 = analyzertxt1 + elment.upper()
         allitemindics = {'Punctuations':'# Your Upper Case text :',"analyzed_text1": analyzertxt1, 'cong':congra}
-        return render(request,'analyze12.html', allitemindics)
+        return render(request,'analyze.html', allitemindics)
     
     elif newlineremover == "on":
         analyzertxt1 = ""
@@ -52,7 +61,7 @@ def analyze12(request):
             if elment != '\n':
                 analyzertxt1 = analyzertxt1 + elment
         allitemindics = {'Punctuations':'# Your  Removed Newline text :',"analyzed_text1": analyzertxt1, 'cong':congra}
-        return render(request,'analyze12.html', allitemindics)
+        return render(request,'analyze.html', allitemindics)
     
     elif  extraspaceremover == "on":      ##> এই লাইনটি চেক করে যে কি 'extraspaceremover' চেকবক্সটি "on" হয়েছে কিনা।
         analyzertxt1 = " "  #> প্রথমে analyzertxt1 নামে একটি খালি স্ট্রিং তৈরি করা হয়।
@@ -62,7 +71,7 @@ def analyze12(request):
                 analyzertxt1 += elment
        
         allitemindics = {'Punctuations':'#Your Removed Extra Space text : ','analyzed_text1':analyzertxt1, 'cong':congra}   #অতিরিক্ত স্পেস মুছে ফেলা হয়ে গেলে, নতুন বানানো ডিকশনারি তৈরি করা হয়। 'analyzed_text1' কী-তে আপনার বিশ্লেষণ করা টেক্সট থাকবে (analyzertxt1)।
-        return render(request,'analyze12.html',allitemindics)    #সর্বশেষে, নতুন তৈরি ডিকশনারির ডেটা দিয়ে 'analyze12.html' নামক একটি HTML টেমপ্লেটে তথ্য প্রদর্শন করা হয়। 
+        return render(request,'analyze.html',allitemindics)    #সর্বশেষে, নতুন তৈরি ডিকশনারির ডেটা দিয়ে 'analyze12.html' নামক একটি HTML টেমপ্লেটে তথ্য প্রদর্শন করা হয়। 
         
         
         
@@ -71,12 +80,26 @@ def analyze12(request):
         charcountout = len(inputtxt)
         
         allitemindics = {'Punctuations':'#Your Charcount in the text : ','analyzed_textchar':f'-> Your charcount is  = {charcountout}', 'cong':congra}   #অতিরিক্ত স্পেস মুছে ফেলা হয়ে গেলে, নতুন বানানো ডিকশনারি তৈরি করা হয়। 'analyzed_text1' কী-তে আপনার বিশ্লেষণ করা টেক্সট থাকবে (analyzertxt1)।
-        return render(request,'analyze12.html',allitemindics)
+        return render(request,'analyze.html',allitemindics)
         
     else:
         return HttpResponse("Please 'on' the 'conditions' choice one !")
     
-    
-        
-    
-    # return HttpResponse()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
