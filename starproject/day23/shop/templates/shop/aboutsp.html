@@ -17,28 +17,35 @@
 
 
 
-
    <div class="container">
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary  bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
-          <form action="/" method="get"><button class="btn btn-outline-danger" style="margin-right: 15px;">E-com.in</button></form>
+          <form action="/shop" method="get"><button class="btn btn-outline-danger" style="margin-right: 15px;">E-com.in</button></form>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <form action="/" method="get"><button class="btn btn-outline-info"style="margin-right: 15px;" >Home</button></form>
+                <form action="/shop" method="get"><button class="btn btn-outline-info"style="margin-right: 15px;" >Home</button></form>
               </li>
-              <li class="nav-item">
+              {% comment %} <li class="nav-item">
                 <form action="/about" method="get"><button class="btn btn-outline-info" style="margin-right: 15px;">Categories</button></form>
               </li>
+               {% endcomment %}
               <li class="nav-item">
-                <form action="/about" method="get"><button class="btn btn-outline-info" style="margin-right: 15px;">Messages</button></form>
+                <form action="/shop/cheackout" method="get"><button class="btn btn-outline-info" style="margin-right: 15px;">Cheackout</button></form>
               </li>
               <li class="nav-item">
-                <form action="/about" method="get"><button class="btn btn-outline-info" style="margin-right: 15px;">About</button></form>
+                <form action="/shop/tracker" method="get"><button class="btn btn-outline-info" style="margin-right: 15px;">Tracking status</button></form>
+              </li>
+            
+              <li class="nav-item">
+                <form action="/shop/contract" method="get"><button class="btn btn-outline-info" style="margin-right: 15px;">Contract</button></form>
+              </li>
+              <li class="nav-item">
+                <form action="/shop/about" method="get"><button class="btn btn-outline-info" style="margin-right: 15px;">About</button></form>
               </li>
             
             </ul>
@@ -56,20 +63,23 @@
 
 
 
+
+
     <br>
 
     
 
     <center>
-        <h2> Welcome to Shop</h2>
-         {% load static %}
+        <h2> Welcome to about of shop</h2>
+      </center>
+         {% comment %} {% load static %}
 
 
    
        
          <a href="{% static 'shop/mystaticshop.html' %}"><button class="btn btn-outline-primary">click static txt</button></a>   <!-- ei kane static folder theke file open kora oise -->
-        
-    </center>
+         {% endcomment %}
+    
    
    
    
